@@ -1,4 +1,4 @@
-import { Feature, Sprint, Goal, Release, Document, Stakeholder, Requirement, Activity, User } from '@/types';
+import { Feature, Sprint, Goal, Release, Document, Stakeholder, Requirement, Activity, User, Notification } from '@/types';
 
 const mockUsers: User[] = [
   {
@@ -367,6 +367,135 @@ export const mockActivities: Activity[] = [
   },
 ];
 
+export const mockNotifications: Notification[] = [
+  {
+    id: 'NOTIF-001',
+    type: 'mention',
+    title: 'You were mentioned',
+    message: 'John Doe mentioned you in the "User Authentication System" feature',
+    user: mockUsers[0],
+    avatar: '👤',
+    relatedId: 'FEAT-001',
+    relatedType: 'feature',
+    read: false,
+    timestamp: '2025-11-03T14:30:00Z',
+    actionUrl: '/features/FEAT-001',
+    actionLabel: 'View Feature',
+  },
+  {
+    id: 'NOTIF-002',
+    type: 'success',
+    title: 'Sprint started successfully',
+    message: 'Sprint 1 - Core Setup has been started and is now active',
+    icon: '🚀',
+    avatar: '📋',
+    relatedId: 'SPRINT-001',
+    relatedType: 'sprint',
+    read: false,
+    timestamp: '2025-11-03T12:15:00Z',
+    actionUrl: '/sprints/SPRINT-001',
+    actionLabel: 'View Sprint',
+  },
+  {
+    id: 'NOTIF-003',
+    type: 'update',
+    title: 'Feature status updated',
+    message: 'Jane Smith updated "Dashboard Analytics" status to In Progress',
+    user: mockUsers[1],
+    avatar: '👩‍💼',
+    relatedId: 'FEAT-002',
+    relatedType: 'feature',
+    read: false,
+    timestamp: '2025-11-03T11:45:00Z',
+    actionUrl: '/features/FEAT-002',
+    actionLabel: 'View Feature',
+  },
+  {
+    id: 'NOTIF-004',
+    type: 'reminder',
+    title: 'Feature due soon',
+    message: '"User Authentication System" is due on November 15th in 12 days',
+    icon: '⏰',
+    avatar: '📌',
+    relatedId: 'FEAT-001',
+    relatedType: 'feature',
+    read: false,
+    timestamp: '2025-11-03T09:00:00Z',
+    actionUrl: '/features/FEAT-001',
+    actionLabel: 'View Feature',
+  },
+  {
+    id: 'NOTIF-005',
+    type: 'update',
+    title: 'Goal progress updated',
+    message: 'Bob Johnson updated "Increase User Engagement" progress to 70%',
+    user: mockUsers[2],
+    avatar: '👨‍💻',
+    relatedId: 'GOAL-001',
+    relatedType: 'goal',
+    read: true,
+    timestamp: '2025-11-02T16:30:00Z',
+    actionUrl: '/goals/GOAL-001',
+    actionLabel: 'View Goal',
+  },
+  {
+    id: 'NOTIF-006',
+    type: 'info',
+    title: 'Document shared',
+    message: 'Alice Williams shared "Product Requirements Document" with you',
+    user: mockUsers[3],
+    avatar: '👩‍💻',
+    relatedId: 'DOC-001',
+    relatedType: 'document',
+    read: true,
+    timestamp: '2025-11-02T13:20:00Z',
+    actionUrl: '/documents/DOC-001',
+    actionLabel: 'View Document',
+  },
+  {
+    id: 'NOTIF-007',
+    type: 'warning',
+    title: 'Goal at risk',
+    message: '"Improve System Performance" goal is now at risk. Current progress: 50%',
+    icon: '⚠️',
+    avatar: '📊',
+    relatedId: 'GOAL-002',
+    relatedType: 'goal',
+    read: true,
+    timestamp: '2025-11-02T10:15:00Z',
+    actionUrl: '/goals/GOAL-002',
+    actionLabel: 'View Goal',
+  },
+  {
+    id: 'NOTIF-008',
+    type: 'success',
+    title: 'Feature completed',
+    message: '"Mobile App Support" has been completed and is now ready for review',
+    icon: '✅',
+    avatar: '🎉',
+    relatedId: 'FEAT-004',
+    relatedType: 'feature',
+    read: true,
+    timestamp: '2025-11-01T15:45:00Z',
+    actionUrl: '/features/FEAT-004',
+    actionLabel: 'View Feature',
+  },
+  {
+    id: 'NOTIF-009',
+    type: 'mention',
+    title: 'You were mentioned',
+    message: 'Jane Smith mentioned you in a comment on "Email Notifications"',
+    user: mockUsers[1],
+    avatar: '👩‍💼',
+    relatedId: 'FEAT-003',
+    relatedType: 'comment',
+    read: true,
+    timestamp: '2025-11-01T12:30:00Z',
+    actionUrl: '/features/FEAT-003',
+    actionLabel: 'View Comment',
+  },
+];
+
 // Helper functions to get mock data
 export const getMockUsers = () => mockUsers;
 export const getMockFeatures = () => mockFeatures;
@@ -377,3 +506,4 @@ export const getMockDocuments = () => mockDocuments;
 export const getMockStakeholders = () => mockStakeholders;
 export const getMockRequirements = () => mockRequirements;
 export const getMockActivities = () => mockActivities;
+export const getMockNotifications = () => mockNotifications;

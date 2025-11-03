@@ -239,3 +239,20 @@ export interface Activity {
     icon: string;
   };
 }
+
+/* Notification Types */
+export interface Notification {
+  id: string;
+  type: 'info' | 'success' | 'warning' | 'error' | 'mention' | 'update' | 'reminder';
+  title: string;
+  message: string;
+  icon?: string;
+  avatar?: string;
+  user?: User;
+  relatedId?: string;
+  relatedType?: 'feature' | 'sprint' | 'goal' | 'release' | 'document' | 'comment';
+  read: boolean;
+  timestamp: string;
+  actionUrl?: string;
+  actionLabel?: string;
+}
