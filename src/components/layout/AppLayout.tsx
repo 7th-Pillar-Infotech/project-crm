@@ -14,12 +14,12 @@ interface AppLayoutProps {
   onLogout?: () => void;
 }
 
-export const AppLayout: React.FC<AppLayoutProps> = ({ children, user, onLogout }) => {
+export const AppLayout: React.FC<AppLayoutProps> = ({ children, onLogout }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar user={user} onLogout={onLogout} />
+      <Navbar onLogout={onLogout} />
       <div className="flex">
         <Sidebar
           isCollapsed={sidebarCollapsed}

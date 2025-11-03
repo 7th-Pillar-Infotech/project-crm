@@ -37,7 +37,7 @@ export default function DashboardPage() {
     : 0;
 
   return (
-    <AppLayout user={{ name: 'John Doe', avatar: '🧑‍💼', email: 'john@example.com' }}>
+    <AppLayout>
       <div className="min-h-screen bg-gray-50 p-6">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 flex items-center justify-between">

@@ -6,6 +6,7 @@ import { Notification } from '@/types';
 import { getMockNotifications } from '@/lib/mockData';
 import { NotificationPanel } from './NotificationPanel';
 import { LogoIcon } from '@/components/icons/LogoIcon';
+import { useUser } from '@/contexts/UserContext';
 
 interface NavbarProps {
   user?: {
@@ -16,7 +17,9 @@ interface NavbarProps {
   onLogout?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
+export const Navbar: React.FC<NavbarProps> = ({ user: propUser, onLogout }) => {
+  const contextUser = useUser();
+  const user = propUser || contextUser;
   const [menuOpen, setMenuOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
   const [notifications, setNotifications] = useState<Notification[]>([]);
