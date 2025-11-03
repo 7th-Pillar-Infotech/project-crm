@@ -41,18 +41,18 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
   };
 
   return (
-    <nav className="sticky top-0 z-40 w-full border-b border-gray-200 bg-white shadow-sm">
+    <nav className="sticky top-0 z-40 w-full border-b border-blue-200 bg-gradient-to-r from-white to-blue-50 shadow-sm">
       <div className="flex h-16 items-center justify-between px-6">
         {/* Logo */}
         <Link href="/dashboard" className="flex items-center space-x-2.5 group">
-          <div className="p-1.5 rounded-xl bg-gradient-to-br from-cyan-100 to-teal-100 group-hover:shadow-lg transition-shadow">
+          <div className="p-1.5 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 group-hover:shadow-lg transition-shadow">
             <LogoIcon />
           </div>
           <div className="hidden sm:flex flex-col leading-tight">
-            <span className="text-sm font-bold bg-gradient-to-r from-cyan-600 to-teal-600 bg-clip-text text-transparent">
+            <span className="text-sm font-bold bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
               ConnectHub
             </span>
-            <span className="text-xs text-gray-500 font-medium">CRM Platform</span>
+            <span className="text-xs text-blue-500 font-medium">CRM Platform</span>
           </div>
         </Link>
 
@@ -64,9 +64,9 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
               <input
                 type="search"
                 placeholder="Search... (⌘K)"
-                className="w-full rounded-xl border border-gray-300 bg-gray-50 pl-4 pr-10 py-2.5 text-sm placeholder-gray-500 focus:border-cyan-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all"
+                className="w-full rounded-xl border border-blue-300 bg-blue-50 pl-4 pr-10 py-2.5 text-sm placeholder-blue-400 text-blue-900 focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-1 focus:ring-blue-500 transition-all"
               />
-              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs font-semibold pointer-events-none">⌘K</span>
+              <span className="absolute right-3 top-1/2 -translate-y-1/2 text-blue-400 text-xs font-semibold pointer-events-none">⌘K</span>
             </div>
           </div>
 
@@ -74,7 +74,7 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
           <div className="relative">
             <button
               onClick={() => setNotificationsOpen(!notificationsOpen)}
-              className="relative rounded-lg p-2 hover:bg-gray-100 transition-colors group"
+              className="relative rounded-lg p-2 hover:bg-blue-100 transition-colors group"
               title="Notifications"
             >
               <span className="text-xl group-hover:scale-110 transition-transform">🔔</span>
@@ -105,8 +105,8 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
                 {user?.avatar || '👤'}
               </div>
               <div className="hidden sm:flex flex-col items-start">
-                <p className="text-xs font-bold text-gray-900 leading-tight">{user?.name || 'User'}</p>
-                <p className="text-xs text-gray-500">{user?.email || 'user@example.com'}</p>
+                <p className="text-xs font-bold text-blue-900 leading-tight">{user?.name || 'User'}</p>
+                <p className="text-xs text-blue-600">{user?.email || 'user@example.com'}</p>
               </div>
             </button>
 
@@ -116,11 +116,11 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
                 {/* User Info Header */}
                 <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-5 text-white">
                   <div className="flex items-center gap-4">
-                    <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-white text-2xl">
+                    <div className="h-12 w-12 flex items-center justify-center rounded-2xl bg-blue-100 text-2xl">
                       {user?.avatar || '👤'}
                     </div>
                     <div>
-                      <p className="text-sm font-bold">{user?.name || 'User'}</p>
+                      <p className="text-sm font-bold text-white">{user?.name || 'User'}</p>
                       <p className="text-xs text-blue-100">{user?.email || 'user@example.com'}</p>
                     </div>
                   </div>
@@ -128,33 +128,33 @@ export const Navbar: React.FC<NavbarProps> = ({ user, onLogout }) => {
 
                 {/* Menu Items */}
                 <div className="p-2 space-y-1">
-                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-700 hover:bg-blue-50 transition-colors group">
+                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-blue-700 hover:bg-blue-50 transition-colors group">
                     <span className="text-lg">👤</span>
                     <div className="text-left">
                       <p className="font-medium">Profile</p>
-                      <p className="text-xs text-gray-500">View and edit your profile</p>
+                      <p className="text-xs text-blue-500">View and edit your profile</p>
                     </div>
                   </button>
 
-                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-700 hover:bg-blue-50 transition-colors">
+                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-blue-700 hover:bg-blue-50 transition-colors">
                     <span className="text-lg">⚙️</span>
                     <div className="text-left">
                       <p className="font-medium">Settings</p>
-                      <p className="text-xs text-gray-500">Manage your preferences</p>
+                      <p className="text-xs text-blue-500">Manage your preferences</p>
                     </div>
                   </button>
 
-                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-gray-700 hover:bg-blue-50 transition-colors">
+                  <button className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm text-blue-700 hover:bg-blue-50 transition-colors">
                     <span className="text-lg">⌨️</span>
                     <div className="text-left">
                       <p className="font-medium">Keyboard Shortcuts</p>
-                      <p className="text-xs text-gray-500">Learn quick commands</p>
+                      <p className="text-xs text-blue-500">Learn quick commands</p>
                     </div>
                   </button>
                 </div>
 
                 {/* Divider */}
-                <div className="border-t border-gray-200"></div>
+                <div className="border-t border-blue-200"></div>
 
                 {/* Logout Button */}
                 <div className="p-2">

@@ -3,9 +3,9 @@
 import React, { useState, useMemo } from 'react';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { mockDocuments } from '@/lib/mockDocumentsData';
-import { 
-  Plus, Search, Filter, SortAsc, FileText, Clock, Eye, Download, 
-  Share2, Trash2, MoreVertical, Star, Pin, ChevronDown, Tag, User, Calendar 
+import {
+  Plus, Search, SortAsc, FileText, Eye, Download,
+  Share2, MoreVertical, Star, User, Calendar
 } from 'lucide-react';
 
 type ViewMode = 'grid' | 'list' | 'detailed';
@@ -47,7 +47,6 @@ export default function DocumentsPage() {
   const [categoryFilter, setCategoryFilter] = useState<string | null>(null);
   const [statusFilter, setStatusFilter] = useState<string | null>(null);
   const [sortBy, setSortBy] = useState<'updated' | 'created' | 'views' | 'name'>('updated');
-  const [selectedDocs, setSelectedDocs] = useState<Set<string>>(new Set());
   const [favorites, setFavorites] = useState<Set<string>>(new Set(mockDocuments.filter(d => d.isFavorite).map(d => d.id)));
 
   const filteredDocuments = useMemo(() => {

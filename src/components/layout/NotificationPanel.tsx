@@ -23,12 +23,12 @@ const getNotificationGradient = (type: Notification['type']) => {
     case 'mention':
       return 'from-purple-50 to-pink-50 hover:from-purple-100 hover:to-pink-100 border-purple-200';
     case 'reminder':
-      return 'from-blue-50 to-cyan-50 hover:from-blue-100 hover:to-cyan-100 border-blue-200';
+      return 'from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border-blue-200';
     case 'update':
-      return 'from-cyan-50 to-teal-50 hover:from-cyan-100 hover:to-teal-100 border-cyan-200';
+      return 'from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border-blue-200';
     case 'info':
     default:
-      return 'from-gray-50 to-slate-50 hover:from-gray-100 hover:to-slate-100 border-gray-200';
+      return 'from-blue-50 to-blue-100 hover:from-blue-100 hover:to-blue-200 border-blue-200';
   }
 };
 
@@ -43,12 +43,12 @@ const getIconStyles = (type: Notification['type']) => {
     case 'mention':
       return { bg: 'bg-gradient-to-br from-purple-100 to-pink-100', text: 'text-purple-600' };
     case 'reminder':
-      return { bg: 'bg-gradient-to-br from-blue-100 to-cyan-100', text: 'text-blue-600' };
+      return { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600' };
     case 'update':
-      return { bg: 'bg-gradient-to-br from-cyan-100 to-teal-100', text: 'text-cyan-600' };
+      return { bg: 'bg-gradient-to-br from-blue-100 to-indigo-100', text: 'text-blue-600' };
     case 'info':
     default:
-      return { bg: 'bg-gradient-to-br from-gray-100 to-slate-100', text: 'text-gray-600' };
+      return { bg: 'bg-gradient-to-br from-blue-100 to-blue-200', text: 'text-blue-600' };
   }
 };
 
