@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Focus Styles */
+:focus-visible {
+  outline: 2px solid #0ea5e9;
+  outline-offset: 2px;
+}
+
+/* Button Base Styles */
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+/* Link Styles */
+a {
+  color: #0ea5e9;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #0369a1;
+}
+
+/* Animation Classes */
+@layer utilities {
+  .fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .slide-in {
+    animation: slideIn 0.3s ease-in-out;
+  }
+
+  .transition-all {
+    transition: all 0.3s ease;
+  }
+}
