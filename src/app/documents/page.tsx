@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useMemo } from 'react';
+import { useRouter } from 'next/navigation';
 import { AppLayout } from '@/components/layout/AppLayout';
 import { mockDocuments } from '@/lib/mockDocumentsData';
 import {
@@ -41,6 +42,7 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function DocumentsPage() {
+  const router = useRouter();
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState<string | null>(null);
@@ -241,6 +243,7 @@ export default function DocumentsPage() {
               {filteredDocuments.map((doc) => (
                 <div
                   key={doc.id}
+                  onClick={() => router.push(`/documents/${doc.id}`)}
                   className={`border-2 rounded-lg p-6 cursor-pointer transition hover:shadow-lg ${categoryColors[doc.category]}`}
                 >
                   {/* Header */}
@@ -325,7 +328,8 @@ export default function DocumentsPage() {
               {filteredDocuments.map((doc) => (
                 <div
                   key={doc.id}
-                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition flex items-center justify-between"
+                  onClick={() => router.push(`/documents/${doc.id}`)}
+                  className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md transition flex items-center justify-between cursor-pointer"
                 >
                   <div className="flex items-center gap-4 flex-1 min-w-0">
                     <input type="checkbox" className="w-4 h-4 rounded" />
